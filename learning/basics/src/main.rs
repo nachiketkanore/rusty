@@ -2,6 +2,18 @@ const LIMIT: i32 = 50;
 
 fn print_value(a: i32) {
     println!("{}", a);
+
+    let x = vec![1, 2, 3, 4];
+    for item in &x {
+        println!("{}", item);
+    }
+    for item in x {
+
+
+
+
+        println!("{}", item);
+    }
 }
 
 fn get_val() -> (i32, i32) {

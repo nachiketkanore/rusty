@@ -5,31 +5,6 @@ fn hello_world(name: String) -> String {
     name.chars().rev().collect::<String>()
 }
 
-use std::collections::HashMap;
-
-#[allow(dead_code)]
-fn use_test() {
-    let mut map = HashMap::new();
-    map.insert("name", "nachiket");
-    map.insert("roll_no", "41231");
-    map.insert("test", "1232423");
-    map.insert("school", "PICT");
-    map.insert("city", "pune");
-
-    let values = map.iter().fold(String::new(), |mut result, (_, value)| {
-        result.push_str(value);
-        result.push_str(" ");
-        result
-    });
-
-    let keys = map.iter().fold(String::new(), |mut result, (key, _)| {
-        result.push_str(key);
-        result.push_str(" ");
-        result
-    });
-    println!("{}, {}", keys, values);
-}
-
 #[derive(Debug)]
 struct Test {
     inputs: Vec<i32>,
@@ -94,7 +69,6 @@ pub fn reverse(input: &str) -> String {
 }
 
 fn main() {
-    use_test();
     println!(
         "{}",
         SimpleTasks::reverse_string("nachiket kanore".to_string())
