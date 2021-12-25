@@ -8,10 +8,6 @@ fn print_value(a: i32) {
         println!("{}", item);
     }
     for item in x {
-
-
-
-
         println!("{}", item);
     }
 }
@@ -25,24 +21,45 @@ fn get_val() -> (i32, i32) {
 #[allow(dead_code, unused)]
 fn just_riding() {
     let x = vec![1, 2, 3];
-    for &val in x.iter() {
-    }
-    for val in x.iter() {
-    }
-    for val in x.iter() {
-    }
+    for &val in x.iter() {}
+    for val in x.iter() {}
+    for val in x.iter() {}
 }
 
 pub fn reverse(s: &str) -> String {
     let mut ans = String::new();
     for i in (0..s.len()).rev() {
-        ans.push_str(&s[i..i+1]);
+        ans.push_str(&s[i..i + 1]);
     }
     println!("{}", s);
     return ans;
 }
 
+use std::error::Error;
+use std::fmt;
+
+#[derive(Debug)]
+pub struct MyError {
+    code: usize,
+}
+impl Error for MyError {
+    fn description(&self) -> &str {
+        "Occurs when someone makes a mistake"
+    }
+}
+impl fmt::Display for MyError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Error code {:#X}", self.code)
+    }
+}
+fn new_main() {
+    println!("Display: {}", MyError { code: 1535 });
+    println!("Debug: {:?}", MyError { code: 42 });
+    println!("Description: {:?}", (MyError { code: 42 }).description());
+}
+
 fn main() {
+    new_main();
     println!("{}", reverse("nachiket"));
     println!("{}", reverse("kanore"));
     println!("{}", reverse("asfda df a sdfads f as df a sfd"));

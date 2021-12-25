@@ -6,34 +6,45 @@ fn hello_world(name: String) -> String {
 }
 
 use std::collections::HashMap;
+use std::collections::HashSet;
 
 #[allow(dead_code)]
 fn use_test() {
     let mut map = HashMap::new();
+
     map.insert("name", "nachiket");
     map.insert("roll_no", "41231");
     map.insert("test", "1232423");
     map.insert("school", "PICT");
     map.insert("city", "pune");
-
     let values = map.iter().fold(String::new(), |mut result, (_, value)| {
         result.push_str(value);
         result.push_str(" ");
         result
     });
-
     let keys = map.iter().fold(String::new(), |mut result, (key, _)| {
         result.push_str(key);
         result.push_str(" ");
         result
     });
     println!("{}, {}", keys, values);
+    let mut myset = HashSet::new();
+    myset.insert("nachiket");
+    myset.insert("kanore");
+    myset.insert("nachiket");
+    myset.insert("anant");
+    let concat: String = myset.iter().fold(String::new(), |mut ret, value| {
+        ret.push_str(value);
+        ret.push_str(" ");
+        ret
+    });
+    println!("concatenated elements: {}", concat);
 }
 
 #[derive(Debug)]
 struct Test {
     inputs: Vec<i32>,
-    outputs: Vec<i32>
+    outputs: Vec<i32>,
 }
 
 impl SimpleTasks {
