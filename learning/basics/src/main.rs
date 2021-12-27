@@ -1,4 +1,12 @@
 const LIMIT: i32 = 50;
+mod reader;
+
+fn other_file() {
+    // reader::hello();
+    let mut line = String::new();
+    reader::get_line(&mut line);
+    println!("got line from stdin:\n{}", line);
+}
 
 fn print_value(a: i32) {
     println!("{}", a);
@@ -59,6 +67,7 @@ fn new_main() {
 }
 
 fn main() {
+    other_file();
     new_main();
     println!("{}", reverse("nachiket"));
     println!("{}", reverse("kanore"));
