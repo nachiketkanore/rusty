@@ -1,0 +1,3 @@
+Opt { name: "nachiket", college: "PICT", id: 2122 }
+Opt { name: "Amrit", college: "AIT", id: 23423 }
+Opt { name: "Kunal", college: "PICT", id: 23423324 }

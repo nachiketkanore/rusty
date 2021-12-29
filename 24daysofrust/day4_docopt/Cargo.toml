@@ -1,0 +1,19 @@
+[package]
+name = "day4_docopt"
+version = "0.1.0"
+authors = ["nachiket kanore <nachiket.kanore@gmail.com>"]
+edition = "2018"
+description = "Exploring argument parsing crates: docopt, structopt, clap?"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = { version = "0.3", default-features = false }
+
+[[bin]]
+name = "first"
+path = "src/bin/first.rs"
+
+[[bin]]
+name = "second"
+path = "src/bin/second.rs"

@@ -1,0 +1,4 @@
+1. check out docopt crate and learn basic functionalities
+2. structopt:
+    - create CLI app (as in docs) to take info from user as CLI arguments
+    - store data in files (file io)
