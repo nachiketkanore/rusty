@@ -10,6 +10,11 @@ pub fn get_line(line: &mut String) {
     io::stdin().read_line(line).expect("unable to read line");
 }
 
+fn works() -> Result<i32, std::num::ParseIntError> {
+    let x: i32 = "21".to_string().parse::<i32>()?;
+    Ok(x)
+}
+
 // this is separate module hence compiler warns about it being unused
 #[allow(dead_code)]
 fn main() {

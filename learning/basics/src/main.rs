@@ -63,7 +63,8 @@ impl fmt::Display for MyError {
 fn new_main() {
     println!("Display: {}", MyError { code: 1535 });
     println!("Debug: {:?}", MyError { code: 42 });
-    println!("Description: {:?}", (MyError { code: 42 }).description());
+    // println!("Description: {:?}", (MyError { code: 42 }).description());
+    let _val: i32 = "21".to_string().parse().expect("failed to parse");
 }
 
 fn main() {

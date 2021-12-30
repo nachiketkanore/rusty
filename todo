@@ -10,7 +10,14 @@
     https://gist.github.com/rylev/f76b8e9567a722f1b157a69a4f98f1c1
 }
 - explore std::* library in rust
+- solve AOC2021 in rust: {
+    resources:
+    https://github.com/UncleScientist/aoc2021
+    TeejDevries github AOC repo (check out)
+}
 
 projects:
 - guessing game (input/outputs)
+
+- rogue like in rust: https://bfnightly.bracketproductions.com/
 
