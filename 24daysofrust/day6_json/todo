@@ -1,7 +1,7 @@
 - get familiar with basic json operations
-- explore different json crates
-- read and write json from files
+- explore different json crates: serde_json, json
+- read and write json from files: read contents to string then ser/des...
 - json encoding and decoding ? struct to json, and json to struct
-- pretty printing json
+- pretty printing json: pretty_string macros
 https://docs.rs/json/latest/json/
 http://zsiciarz.github.io/24daysofrust/book/vol1/day6.html
