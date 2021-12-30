@@ -7,8 +7,9 @@
 - Rust projects (https://picklenerd.github.io/pngme_book/)
 - Checkout interesting resources below {
     http://nifty.stanford.edu/
+    https://gist.github.com/rylev/f76b8e9567a722f1b157a69a4f98f1c1
 }
-
+- explore std::* library in rust
 
 projects:
 - guessing game (input/outputs)

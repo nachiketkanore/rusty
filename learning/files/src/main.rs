@@ -1,6 +1,6 @@
 use std::fs::File;
 use std::io::prelude::*;
-use std::io::{self, BufReader};
+use std::io::{self};
 use std::path::Path;
 
 // The output is wrapped in a Result to allow matching on errors

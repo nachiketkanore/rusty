@@ -1,0 +1,5 @@
+- basics of http libraries
+- hyper, reqwest crates
+- send request, get response
+- get, post with query parameters
+- sending json
