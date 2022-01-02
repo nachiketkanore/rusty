@@ -20,4 +20,5 @@ projects:
 - guessing game (input/outputs)
 
 - rogue like in rust: https://bfnightly.bracketproductions.com/
-
+- https://rust-cli.github.io/book/index.html (rust cli book)
+- explore coloring output: https://docs.rs/colour/latest/colour/
