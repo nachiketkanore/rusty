@@ -67,6 +67,10 @@ fn new_main() {
     let _val: i32 = "21".to_string().parse().expect("failed to parse");
 }
 
+fn nachiket() -> () {
+    ()
+}
+
 fn main() {
     other_file();
     new_main();

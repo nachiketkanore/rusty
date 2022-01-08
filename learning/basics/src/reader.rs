@@ -15,10 +15,26 @@ fn works() -> Result<i32, std::num::ParseIntError> {
     Ok(x)
 }
 
+fn check() {
+    let mut a = Vec::new();
+    let first = 20;
+    let second = 10;
+
+    if 2 * second == first {
+        a.push(20);
+    } else {
+        a.push("nachiket");
+    }
+
+    a.push("hello");
+}
+
 // this is separate module hence compiler warns about it being unused
 #[allow(dead_code)]
 fn main() {
     use std::io;
+
+    check();
 
     let mut my_line = String::new();
 
