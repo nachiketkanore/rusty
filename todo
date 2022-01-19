@@ -15,6 +15,19 @@
     https://github.com/UncleScientist/aoc2021
     TeejDevries github AOC repo (check out)
 }
+- important concepts {
+	multi-threading
+	multi-processing
+	async
+	generics
+	iterators
+	generators
+	compilers
+	interpreters
+	decorators
+	std library
+	macros
+}
 
 projects:
 - guessing game (input/outputs)
