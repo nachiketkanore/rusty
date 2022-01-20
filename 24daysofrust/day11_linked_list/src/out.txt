@@ -1,0 +1,21 @@
+linked_list = Some(
+    Node {
+        data: "world",
+        next: Some(
+            Node {
+                data: "hello",
+                next: Some(
+                    Node {
+                        data: "kanore",
+                        next: Some(
+                            Node {
+                                data: "nachiket",
+                                next: None,
+                            },
+                        ),
+                    },
+                ),
+            },
+        ),
+    },
+)

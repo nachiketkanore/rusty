@@ -1,6 +1,28 @@
 const LIMIT: i32 = 50;
 mod reader;
 
+fn nachiket2() -> i32 {
+    for (id, val) in (1..100).enumerate().map(|(id, val)| (id + 1, val)) {
+        println!("{} {}", id, val);
+    }
+    use std::collections::HashMap;
+    let map = HashMap::new();
+    map.insert("hello".to_string(), "greeting".to_string());
+    let x = (1..20)
+        .map(|x| x * x)
+        .filter(|x| x < &500)
+        .filter(|x| x < &300)
+        .filter(|x| x < &100)
+        .max()
+        .unwrap();
+
+    let answer = (1..1000000)
+        .filter(|x| x * x < 1000000)
+        .map(|x| x * x)
+        .collect::<Vec<i32>>();
+    *answer.last().unwrap()
+}
+
 fn other_file() {
     // reader::hello();
     let mut line = String::new();

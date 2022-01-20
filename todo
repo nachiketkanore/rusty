@@ -27,6 +27,7 @@
 	decorators
 	std library
 	macros
+	smart pointer : {Box, Rc, RefCell} -- https://doc.rust-lang.org/book/ch15-00-smart-pointers.html
 }
 
 projects:
