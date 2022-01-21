@@ -1,0 +1,11 @@
+[package]
+name = "day12_aoc_2020"
+version = "0.1.0"
+authors = ["nachiket kanore <nachiket.kanore@gmail.com>"]
+edition = "2018"
+
+[features]
+
+[dependencies]
+anyhow = "1.0.49"
+itertools = "*"
