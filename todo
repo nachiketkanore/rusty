@@ -28,6 +28,7 @@
 	std library
 	macros
 	smart pointer : {Box, Rc, RefCell} -- https://doc.rust-lang.org/book/ch15-00-smart-pointers.html
+	ffi: Foreign Function Interface
 }
 
 projects:
@@ -36,3 +37,14 @@ projects:
 - rogue like in rust: https://bfnightly.bracketproductions.com/
 - https://rust-cli.github.io/book/index.html (rust cli book)
 - explore coloring output: https://docs.rs/colour/latest/colour/
+{
+	text editor,
+	chat server,
+	animations with code,
+	image compression algorithms,
+	simple compiler/linter for .md or .env files,
+	generic table crate for storing simple data + persistence,
+	exercism.io open source contribute on github?,
+	implement graphs and trees in rust,
+	neovim plugin in rust,
+}
