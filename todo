@@ -29,6 +29,7 @@
 	macros
 	smart pointer : {Box, Rc, RefCell} -- https://doc.rust-lang.org/book/ch15-00-smart-pointers.html
 	ffi: Foreign Function Interface
+	Operating System in rust (https://os.phil-opp.com/)
 }
 
 projects:
