@@ -13,7 +13,7 @@ day12: AoC 2020:: {
 		solve [1-10] problems
 	}?
 day13: database app? (idea: dictionary cli app with database inside)
-day14: rust book -> any chapter -> implement
+day14: CLI program + publish on crates.io from book
 day15: multithreaded webserver (https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html)
 day16: rust api with sqlite (https://www.developer.com/languages/creating-an-api-with-rust-and-sqlite)
 day17: markdown compiler in rust(https://jesselawson.org/rust/getting-started-with-rust-by-building-a-tiny-markdown-compiler/)
