@@ -48,4 +48,5 @@ projects:
 	exercism.io open source contribute on github?,
 	implement graphs and trees in rust,
 	neovim plugin in rust,
+	rest api (full fledged) (https://auth0.com/blog/build-an-api-in-rust-with-jwt-authentication-using-actix-web/)
 }

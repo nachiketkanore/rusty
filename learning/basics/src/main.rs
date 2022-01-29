@@ -1,14 +1,22 @@
+#![allow(dead_code)]
 const LIMIT: i32 = 50;
-mod reader;
+// mod reader;
+
+fn factorial(n: u32) -> u32 {
+    match n {
+        0 => 1,
+        n => n * factorial(n - 1),
+    }
+}
 
 fn nachiket2() -> i32 {
     for (id, val) in (1..100).enumerate().map(|(id, val)| (id + 1, val)) {
         println!("{} {}", id, val);
     }
     use std::collections::HashMap;
-    let map = HashMap::new();
+    let mut map = HashMap::new();
     map.insert("hello".to_string(), "greeting".to_string());
-    let x = (1..20)
+    let _x = (1..20)
         .map(|x| x * x)
         .filter(|x| x < &500)
         .filter(|x| x < &300)
@@ -24,9 +32,10 @@ fn nachiket2() -> i32 {
 }
 
 fn other_file() {
+    dbg!(factorial(5));
     // reader::hello();
-    let mut line = String::new();
-    reader::get_line(&mut line);
+    let line = String::new();
+    // reader::get_line(&mut line);
     println!("got line from stdin:\n{}", line);
 }
 

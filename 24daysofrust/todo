@@ -17,3 +17,13 @@ day14: CLI program + publish on crates.io from book
 day15: multithreaded webserver (https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html)
 day16: rust api with sqlite (https://www.developer.com/languages/creating-an-api-with-rust-and-sqlite)
 day17: markdown compiler in rust(https://jesselawson.org/rust/getting-started-with-rust-by-building-a-tiny-markdown-compiler/)
+day18: snake game full (
+	https://snake.rustbridge.com/
+	https://github.com/tensor-programming/snake-tutorial/
+)
+day19: chess engine in rust (Pleco: creating a chess engine with rust)
+day20: TUI based countdown timer
+{
+	rust features with examples very nicely explained:
+	https://github.com/Mathieu-Desrochers/Learning-Rust/blob/master/src/main.rs
+}

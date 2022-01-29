@@ -30,9 +30,9 @@ pub fn solve() {
         .collect::<Vec<i32>>()
         .iter()
         .fold(1u64, |res, score| res * (*score as u64));
-    println!("Day 3: Part 1 = {}", ans1);
-    println!("Day 3: Part 1 = {}", ans2);
+    println!("Part 1 = {}", ans1);
+    println!("Part 2 = {}", ans2);
     // Answers:
     // Day 3: Part 1 = 286
-    // Day 3: Part 1 = 3638606400
+    // Day 3: Part 2 = 3638606400
 }
