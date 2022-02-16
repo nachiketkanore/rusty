@@ -1,12 +1,34 @@
 #![allow(dead_code)]
 const LIMIT: i32 = 50;
-// mod reader;
+// mod reader
+
+mod math {
+    pub fn prime(n: u32) -> bool {
+        match n {
+            0 | 1 => false,
+            n => {
+                for d in 2..(n as f64).sqrt() as u32 {
+                    if n % d == 0 {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+    }
+}
 
 fn factorial(n: u32) -> u32 {
     match n {
         0 => 1,
         n => n * factorial(n - 1),
     }
+}
+
+fn playground() {
+    let x = 20;
+    let y: &i32 = &x.clone();
+    dbg!(x, y);
 }
 
 fn nachiket2() -> i32 {
