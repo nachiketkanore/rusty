@@ -5,6 +5,10 @@ use std::{
 };
 
 fn main() -> Result<(), Box<dyn Error>> {
+    let ext = "nachiket";
+    let ext2 = "kanore";
+    println!("named arguments testing {ext}");
+    println!("named arguments testing2 {ext2}");
     let addr: SocketAddr = "0.0.0.0:3779".parse()?;
     let listener = TcpListener::bind(addr)?;
     println!("Listening on http://{}", addr);
