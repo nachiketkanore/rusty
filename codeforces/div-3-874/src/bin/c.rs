@@ -36,16 +36,14 @@ fn main() {
                 even += 1;
             }
         }
-        if even == n || odd == n {
+        if even == n
+            || odd == n
+            || *a.iter().filter(|&val| val % 2 == 0).min().unwrap()
+                > *a.iter().filter(|&val| val % 2 == 1).min().unwrap()
+        {
             writeln!(out, "YES").unwrap();
         } else {
-            let smallest_even: i32 = *a.iter().filter(|&val| val % 2 == 0).min().unwrap();
-            let smallest_odd: i32 = *a.iter().filter(|&val| val % 2 == 1).min().unwrap();
-            if smallest_even > smallest_odd {
-                writeln!(out, "YES").unwrap();
-            } else {
-                writeln!(out, "NO").unwrap();
-            }
+            writeln!(out, "NO").unwrap();
         }
     }
 }
