@@ -16,7 +16,7 @@ struct ChunkResult {
 
 fn process_chunk(chunk: String) -> ChunkResult {
     let mut balance = 0;
-    let mut min_balance = 0;
+    let mut min_balance: i64 = i64::max_value();
 
     for c in chunk.chars() {
         match c {
