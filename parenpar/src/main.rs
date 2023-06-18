@@ -1,6 +1,8 @@
+use rand::Rng;
 use std::{
     sync::mpsc::{channel, Receiver, Sender},
     thread::{self, JoinHandle},
+    time::Instant,
 };
 
 struct ThreadInfo {
@@ -45,8 +47,8 @@ fn worker_thread(chunk_receiver: Receiver<String>, result_sender: Sender<ChunkRe
 }
 
 fn check_valid_parentheses(input: &str) -> bool {
-    const CHUNK_SIZE: usize = 5; // Adjust the chunk size as needed
-    const NUM_THREADS: usize = 10; // Adjust the number of threads as needed
+    const CHUNK_SIZE: usize = 1000000; // Adjust the chunk size as needed
+    const NUM_THREADS: usize = 8; // Adjust the number of threads as needed
 
     let chunks: Vec<_> = input.chars().collect();
 
@@ -96,13 +98,67 @@ fn check_valid_parentheses(input: &str) -> bool {
     global_balance == 0 && global_min_balance >= 0
 }
 fn main() {
-    let s = "()(())()()(((())))";
-    println!("string = {}, valid = {}", s, check_valid_parentheses(s));
+    for id in 0..10 {
+        let s = generate_random_parentheses();
+
+        let start_time = Instant::now();
+        let correct = brute_checker(&s);
+        let brute_time = start_time.elapsed();
+
+        let start_time = Instant::now();
+        let solution = check_valid_parentheses(&s);
+        let my_time = start_time.elapsed();
+
+        println!("Brute: {:?}, My: {:?}", brute_time, my_time);
+        assert_eq!(solution, correct);
+        println!("OK test {}", id);
+    }
+}
+
+fn brute_checker(s: &str) -> bool {
+    let (mut bal, mut min_bal) = (0, i64::MAX);
+    for ch in s.chars() {
+        if ch == '(' {
+            bal += 1;
+        } else if ch == ')' {
+            bal -= 1;
+        } else {
+            panic!("bad input for string");
+        }
+        min_bal = min_bal.min(bal);
+    }
+    bal == 0 && min_bal >= 0
+}
+
+fn generate_random_parentheses() -> String {
+    let mut rng = rand::thread_rng();
+    let mut parentheses = String::new();
+    let mut balance = 0;
+    let length = 1e8 as usize;
+
+    while parentheses.len() < length {
+        let random_char = if balance > 0 && rng.gen::<f64>() < 0.5 {
+            balance -= 1;
+            ')'
+        } else {
+            balance += 1;
+            '('
+        };
+
+        parentheses.push(random_char);
+    }
+
+    while balance > 0 {
+        parentheses.push(')');
+        balance -= 1;
+    }
+
+    parentheses
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::check_valid_parentheses;
+    use crate::{check_valid_parentheses, generate_random_parentheses};
 
     #[test]
     fn test_valid_parentheses() {
@@ -151,4 +207,41 @@ mod tests {
         let s = ")".repeat(1000000);
         assert_eq!(check_valid_parentheses(s.as_str()), false);
     }
+
+    #[test]
+    fn test_random_large_input_valid() {
+        for _ in 0..5 {
+            let s = generate_random_parentheses();
+            assert_eq!(check_valid_parentheses(s.as_str()), true);
+        }
+    }
 }
+// Benchmark logs:
+//
+// Parameters:
+// const CHUNK_SIZE: usize = 1000000; // Adjust the chunk size as needed
+// const NUM_THREADS: usize = 8; // Adjust the number of threads as needed
+// let length = 1e8 as usize;
+//
+/*
+Brute: 1.143071289s, My: 1.059856668s
+OK test 0
+Brute: 1.140490921s, My: 1.087086417s
+OK test 1
+Brute: 1.142042704s, My: 1.087540431s
+OK test 2
+Brute: 1.140149592s, My: 1.088812247s
+OK test 3
+Brute: 1.138979688s, My: 1.090767189s
+OK test 4
+Brute: 1.138598026s, My: 1.121822518s
+OK test 5
+Brute: 1.141424134s, My: 1.102247529s
+OK test 6
+Brute: 1.141956544s, My: 1.106900144s
+OK test 7
+Brute: 1.139567871s, My: 1.088665193s
+OK test 8
+Brute: 1.140854629s, My: 1.087422395s
+OK test 9
+*/
