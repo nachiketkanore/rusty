@@ -1,0 +1,7 @@
+# start the postgres database server in docker
+docker-compose up -d
+
+# username: test password: test
+
+# connecting to this database using psql CLI
+psql -h localhost -p 5432 -U test
