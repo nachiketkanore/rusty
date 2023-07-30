@@ -1,7 +1,13 @@
 # start the postgres database server in docker
+# this mount the ./data folder in the current directory to the postgres data folder inside docker
+# to persist volumes, since docker containers are stateless applications and used only to run processes\
+# data stored in them will be lost if the container is stopped
 docker-compose up -d
 
 # username: test password: test
 
 # connecting to this database using psql CLI
 psql -h localhost -p 5432 -U test
+
+# use script.py python script to interact with the database programmatically
+
