@@ -1,0 +1,4 @@
+- install meilisearch
+- also download movies.json from their tutorial (https://www.meilisearch.com/docs/learn/getting_started/quick_start)
+- start meilisearch server (check build.py)
+- hit queries using client (check search.py)
