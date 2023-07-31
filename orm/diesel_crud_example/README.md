@@ -31,7 +31,7 @@ diesel setup
 
 ```bash
 DATABASE_URL=postgres://your-db-user:your-db-password@localhost/sampledb
-```bash
+```
 
 ## Building and Running the API
 - Build and run the API using Cargo:
