@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres_sample
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: sampleuser
+      POSTGRES_PASSWORD: samplepassword
+      POSTGRES_DB: sampledb
+    volumes:
+      - ./data:/var/lib/postgresql/data

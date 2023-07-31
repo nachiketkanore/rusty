@@ -1,0 +1,15 @@
+[package]
+name = "diesel_crud_example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "3.0.0"
+diesel = { version = "1.4", features = ["postgres", "r2d2"] }
+dotenv = "0.15"
+serde = { version = "1.0.180", features = ["derive"] }
+
+[build-dependencies]
+diesel_cli = { version = "1.4", features = ["postgres"] }

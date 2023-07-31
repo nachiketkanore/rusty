@@ -1,0 +1,25 @@
+# Compiled files
+/target/
+Cargo.lock
+
+# Build artifacts
+**/*.rs.bk
+
+# Docker-related
+**/.env
+**/.env.*
+
+# Database
+migrations/*.sql
+
+# Logs
+**/*.log
+**/*.log.*
+
+# Editor and IDE specific files
+.idea/
+.vscode/
+
+# Crate-specific ignore files
+# (Add any other Rust crates you use here)
+diesel_cli/.diesel
